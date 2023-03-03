@@ -1,0 +1,43 @@
+/**
+ * @file ex01.c
+ * @author Joshua Barbosa
+ * @brief [Recurs ̃ao] Escreva e programe uma fun ̧c ̃ao recursiva para calcular o valor de um n ́umero inteiro de base
+x elevada a um expoente inteiro y, sendo os valores de x>0 e y>0 fornecidos pelo usu ́ario.
+ * @version 0.1
+ * @date 2023-03-03
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+
+    int numberX, numberY;
+
+    printf("Insira número da base: \n");
+    scanf("%d", &numberX);
+
+    printf("Insira número do expoente: \n");
+    scanf("%d", &numberY);
+
+    printf("\n\nResultado: %d\n", funcaoExponente(numberX, numberY));
+    
+}
+
+int funcaoExponente(int x, int y){
+    int result = 0;
+
+    if(y == 0){
+        return result;
+    } else {
+        x = x * x;
+        y = y-1;
+        funcaoExponente(x, y);
+    }
+    
+}
+
